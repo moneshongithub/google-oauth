@@ -1,0 +1,49 @@
+<html>
+
+<head>
+  <title>Login & Signup Page</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/login.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="glass-frame">
+      <h1>Welcome!</h1>
+      <div class="tabs">
+        <button class="tab" onclick="switchTab(event, 'login')">Login</button>
+      <button class="tab" onclick="switchTab(event, 'signup')">Signup</button>
+      </div>
+      <div id="login" class="tab-content">
+        <form action="/login/federated/google"">
+          <input type="text" placeholder="Username" >
+          <input type="password" placeholder="Password">
+          <a href="/login/federated/google"><button type="submit">Login</button></a>
+        </form>
+      </div>
+      <div id="signup" class="tab-content">
+        <form>
+          <input type="text" placeholder="Username" required>
+          <input type="password" placeholder="Password" required>
+          <input type="password" placeholder="Confirm Password" required>
+          <button type="submit">Signup</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  function switchTab(event, tabName) {
+  var i, tabContent;
+  tabContent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabContent.length; i++) {
+    tabContent[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+}
+
+// document.getElementById("login").style.display = "block";
+
+</script>
+
+</html>
